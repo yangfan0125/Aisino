@@ -1,0 +1,36 @@
+[
+	{	
+		"department":"part1",
+		"shouldnum":"1",
+		"shouldprice":"1",
+		"alreadynum":"2",
+		"alreadyprice":"2",
+		"checkednotnum":"3",
+		"checkednotprice":"3",
+		"checkingnotnum":"4",
+		"checkingnotprice":"4"
+	},
+	{	
+		"department":"part2",
+		"shouldnum":"11",
+		"shouldprice":"11",
+		"alreadynum":"22",
+		"alreadyprice":"22",
+		"checkednotnum":"33",
+		"checkednotprice":"33",
+		"checkingnotnum":"44",
+		"checkingnotprice":"44"
+	},
+	{	
+		"department":"part3",
+		"shouldnum":"111",
+		"shouldprice":"111",
+		"alreadynum":"222",
+		"alreadyprice":"222",
+		"checkednotnum":"333",
+		"checkednotprice":"333",
+		"checkingnotnum":"444",
+		"checkingnotprice":"444"
+	}
+	
+]

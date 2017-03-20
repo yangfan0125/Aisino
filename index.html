@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>Aisino</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-reset.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-responsive.css"/>
+	<link rel="stylesheet" href="css/bootstrap-table.css">
+     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<section id="container">
+	<!-- header start -->
+		<header class="header fixed-top clearfix">
+		<!-- logo start -->
+			<div class="brand">
+				<a class="logo" href="index.html"></a>
+				<!-- 左侧控制按钮 start -->
+				<div class="sidebar-toggle-box">
+					<div class="fa fa-bars"></div>
+				</div>
+				<!-- 左侧控制按钮 end -->
+			</div>
+		<!-- logo end -->
+		<!-- setting start -->
+			<div class="top-nav clearfix">
+				<ul class="nav pull-right top-menu">
+				<!-- user login dropdown start -->
+					<li class="dropdown">
+						<a href="##" class="dropdown-toggle" data-toggle="dropdown">		
+							<i class="iconfont icon-xitongguanli user-icon"></i>
+							<span class="username">系统管理员</span>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu extended logout">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#passwordModal">
+									<i class="iconfont icon-key"></i>
+									密码管理
+								</a>
+							</li>
+							<li>
+								<a href="#" data-toggle="modal" data-target="#aboutusModal">
+									<i class="iconfont icon-guanyuwomen3"></i>
+									关于我们
+								</a>
+							</li>
+							<li>
+								<a href="login.html">
+									<i class="iconfont icon-tuichu2 out"></i>
+									退出系统
+								</a>
+							</li>
+						</ul>
+						<!-- 密码修改框 start -->
+							<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+												&times;
+											</button>
+											<h4 class="modal-title" id="myModalLabel">
+												密码管理
+											</h4>
+										</div>
+										<div class="modal-body">
+											<div class="form">
+				                                <form class="cmxform form-horizontal " id="signupForm" method="get" action="#">
+				                                	<div class="form-group ">
+				                                        <label for="password" class="control-label col-lg-3">原登陆密码</label>
+				                                        <div class="col-lg-6">
+				                                            <input class="form-control " id="password" name="password" type="password" />
+				                                        </div>
+				                                    </div>
+				                                    <div class="form-group ">
+				                                        <label for="password" class="control-label col-lg-3">新登陆密码</label>
+				                                        <div class="col-lg-6">
+				                                            <input class="form-control " id="password" name="password" type="password" />
+				                                        </div>
+				                                    </div>
+				                                    <div class="form-group ">
+				                                        <label for="confirm_password" class="control-label col-lg-3">确认密码</label>
+				                                        <div class="col-lg-6">
+				                                            <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
+				                                        </div>
+				                                    </div>
+				                                </form>
+				                            </div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+											</button>
+											<button type="button" class="btn btn-primary">
+												保存
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!-- 密码修改框 end -->
+						<!-- 关于我们 start -->
+							<div class="modal fade" id="aboutusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+												&times;
+											</button>
+											<h4 class="modal-title" id="myModalLabel">
+												关于我们
+											</h4>
+										</div>
+										<div class="modal-body">
+											<div class="about-aisino"></div>
+				                          	<p class="copyright">版权所有：浙江爱信诺航天信息有限公司</p>
+				                          	<p class="version">版本号：1.2015091601</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!-- 关于我们 end -->
+					</li>
+				<!-- user login dropdown end -->
+				</ul>
+			</div>	
+		<!-- setting end -->
+		</header>
+	<!-- header end	 -->
+	<!--sidebar start-->
+	    <aside>
+	        <div id="sidebar" class="nav-collapse">
+	        	<div class="leftside-navigation">
+		            <!-- sidebar menu start-->
+		            <ul class="sidebar-menu">
+		            </ul>
+		            <!-- sidebar menu end-->
+		        </div>    
+	        </div>
+	    </aside>
+    <!--sidebar end-->
+    <!--main content start-->
+	    <section id="main-content">
+	        <section class="wrapper">
+	        <!-- part1-1 start -->
+	        	<div class="main-block show">
+                    <iframe src="authority.html" frameborder="0" width="100%" height="100%" class="role-box"></iframe>
+	   			</div>
+	   		<!-- part1-1 end -->
+	   		<!-- part1-2 start -->
+	   			<div class="main-block">
+					 <iframe src="role.html" frameborder="0" width="100%" height="100%" class="role-box"></iframe>
+                </div>
+            <!-- part1-2 end -->   
+	   		<!-- part1-3 start -->	
+	   			<div class="main-block">
+					<iframe src="bill.html" frameborder="0" width="100%" height="100%" class="role-box"></iframe>
+	   			</div>
+	   		<!-- part1-3 end -->
+	   		<!-- part2-1 start -->	
+	   			<div class="main-block">
+					<iframe src="calendar.html" frameborder="0" width="100%" height="100%" class="role-box"></iframe>
+	   			</div>
+	   		<!-- part2-1 end -->	
+	   		<!-- part2-2 start -->	
+	   			<div class="main-block">
+					<h1>part2-2</h1>
+	   			</div>
+	   		<!-- part2-2 end -->	
+	   		<!-- part2-3 start -->	
+	   			<div class="main-block">
+					<h1>part2-3</h1>
+	   			</div>
+	   		<!-- part2-3 end -->	
+	   		<!-- part3-1 start -->	
+	   			<div class="main-block">
+					<h1>part3-1</h1>
+	   			</div>
+	   		<!-- part3-1 end -->	
+	   		<!-- part3-2 start -->	
+	   			<div class="main-block">
+					<h1>part3-2</h1>
+	   			</div>
+	   		<!-- part3-2 end -->	
+	   		<!-- part3-3 start -->	
+	   			<div class="main-block">
+					<h1>part3-3</h1>
+	   			</div>
+	   		<!-- part3-3 end -->
+	   		<!-- part4-1 start -->	
+	   			<div class="main-block">
+					<h1>part4-1</h1>
+	   			</div>
+	   		<!-- part4-1 end -->	
+	   		<!-- part4-2 start -->	
+	   			<div class="main-block">
+					<h1>part4-2</h1>
+	   			</div>
+	   		<!-- part4-2 end -->	
+	   		<!-- part4-3 start -->	
+	   			<div class="main-block">
+					<h1>part4-3</h1>
+	   			</div>
+	   		<!-- part4-3 end -->	
+	        </section>
+	    </section>
+    <!--main content end-->
+	</section>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+</html>

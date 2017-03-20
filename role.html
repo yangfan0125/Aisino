@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>Aisino</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-reset.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-responsive.css"/>
+	<link rel="stylesheet" href="css/bootstrap-table.css">
+     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="main-block show">
+    <section class="panel">
+        <header class="panel-heading">
+            角色管理
+            <span class="tools pull-right">
+                <a href="javascript:" class="fa fa-chevron-down"></a>
+             </span>
+        </header>
+        <div class="panel-body">
+        	<div id="toolbar">
+        		<ul class="toolwrap clearfix">
+        			<li>
+        				<a href="##" data-toggle="modal" data-target="#authorityModal" class="btn btn-primary btn-xs">
+							<i class="iconfont icon-add" ></i>
+    						添加
+    					</a>
+        			</li>
+        			<li>
+        				<a href="##" class="modify btn btn-primary  btn-xs" data-toggle="modal" data-target="#" >
+							<i class="iconfont icon-icon56-copy"></i>
+    						修改
+    					</a>
+        			</li>
+        			<li>
+        				<a href="##" data-toggle="modal" data-target="#" class="delete btn btn-primary btn-xs">
+							<i class="iconfont icon-shanchu6"></i>
+    						删除
+    					</a>
+        			</li>
+        		</ul>
+        	</div>
+	        <table class="role-wrap main-table">	
+	        </table>
+	    </div>
+        <!-- 添加角色 start -->
+			<div class="modal fade roleModal" id="authorityModal" tabindex="-1" role="dialog" aria-labelledby="authorityModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								添加角色
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form">
+                                <form class="form-horizontal" role="form">
+		                            <div class="form-group">
+		                                <label for="rolename" class="col-lg-3 col-sm-4 col-xs-5 control-label">角色名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control required" id="rolename" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="remark" class="col-lg-3 col-sm-4 col-xs-5 control-label">备注</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="remark" >
+		                                </div>
+		                            </div>
+		                        </form>
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消
+							</button>
+							<button type="button" class="btn btn-primary addrole" data-dismiss="modal">保存
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- 添加角色 end -->
+		<!-- 清空缓存 start -->
+			<div class="modal fade" id="clearcacheModal" tabindex="-1" role="dialog" aria-labelledby="clearcacheModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									操作提示
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="clearcachep">
+								<i class="iconfont icon-que question"></i>
+								你确定要重新初始化系统缓存吗？</div>	
+							</div>
+							<div class="modal-footer" style="margin-top:0;">
+								<button type="button" class="btn btn-primary">确定
+								</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" >
+									取消
+								</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		<!-- 清空缓存 end -->
+		<!-- 修改角色 start -->
+			<div class="modal fade roleModal" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								修改
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form">
+                                <form class="form-horizontal" role="form">
+		                            <div class="form-group">
+		                                <label for="rolename" class="col-lg-3 col-sm-4 col-xs-5 control-label">角色名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control required" id="rolename" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="remark" class="col-lg-3 col-sm-4 col-xs-5 control-label">备注</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="remark" >
+		                                </div>
+		                            </div>
+		                        </form>
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消
+							</button>
+							<button type="button" class="btn btn-primary addrole" data-dismiss="modal">保存
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- 修改角色 end -->
+		<!-- 删除 start -->
+			<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								操作提示
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="clearcachep">
+								<i class="iconfont icon-que question"></i>
+								该操作有可能会将基于它的数据也删除，你确定要删除这<span class="deletenum"></span>条数据吗？
+							</div>		
+							</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary delrow" data-dismiss="modal">确定
+							</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" >
+								取消
+							</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div>
+			</div>
+		<!-- 删除 end -->
+		<!-- oneData  start -->
+			<div class="modal fade" id="oneDataModal" tabindex="-1" role="dialog" aria-labelledby="oneDataModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									操作提示
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="clearcachep">
+								<i class="iconfont icon-jinggao-copy question"></i>
+								请选择一行数据再进行操作</div>	
+							</div>
+							<div class="modal-footer" style="margin-top:0;">
+								<button type="button" class="btn btn-primary"  data-dismiss="modal" >确定
+								</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		<!-- oneData end -->
+	</section>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/bootstrap-table.js"></script>
+<script src="js/bootstrap-table-zh-CN.js"></script>
+<script src="js/bootstrap-table-export.js"></script>
+<script src="js/tableExport.js"></script>
+<script src="js/role.js"></script>
+<script src="js/global.js"></script>
+
+</html>

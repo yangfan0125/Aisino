@@ -1,0 +1,23 @@
+[
+    {
+        "name":"员工",
+        "creationDate":"2016-08-05 14:54:04",
+        "modificationDate":"2017-02-22 10:26:10",
+        "remark":"",
+        "id":"0"
+    },
+    {
+        "name":"开票员",
+        "creationDate":"2016-08-05 14:54:04",
+        "modificationDate":"2017-02-22 10:26:10",
+        "remark":"",
+        "id":"1"
+    },
+    {
+        "name":"管理员",
+        "creationDate":"2016-08-05 14:54:04",
+        "modificationDate":"2017-02-22 10:26:10",
+        "remark":"",
+        "id":"2"
+    }
+]

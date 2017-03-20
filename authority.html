@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>Aisino</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-reset.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-responsive.css"/>
+	<link rel="stylesheet" href="css/bootstrap-table.css">
+	<link rel="stylesheet" href="css/select2.css">
+     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="main-block show">
+    <section class="panel">
+        <header class="panel-heading">
+            角色管理
+            <span class="tools pull-right">
+                <a href="##" class="fa fa-chevron-down" ></a>
+             </span>
+
+        </header>
+        <div class="panel-body">
+        	<div id="toolbar">
+        		<ul class="toolwrap clearfix">
+        			<li>
+        				<a href="##" data-toggle="modal" data-target="#authorityModal" class="btn btn-primary btn-xs">
+							<i class="iconfont icon-add" ></i>
+    						添加
+    					</a>
+        			</li>
+        			<li>
+        				<a href="##" class="modify btn btn-primary  btn-xs" data-toggle="modal" data-target="#" >
+							<i class="iconfont icon-icon56-copy"></i>
+    						修改
+    					</a>
+        			</li>
+        			<li>
+        				<a href="##" data-toggle="modal" data-target="#" class="delete btn btn-primary btn-xs">
+							<i class="iconfont icon-shanchu6"></i>
+    						删除
+    					</a>
+        			</li>
+        			<li>
+        				<a href="##" data-toggle="modal" data-target="#clearcacheModal" class="btn btn-primary btn-xs">
+							<i class="iconfont icon-qingchuhuancun4" ></i>
+    						清空缓存
+    					</a>
+        			</li>
+        			<li>
+        				<a href="##" class="btn btn-primary btn-xs">
+							<i class="iconfont icon-paixu3"></i>
+    						排序
+    					</a>
+        			</li>
+        			<li>
+        		</ul>
+        	</div>
+	        <table class="authority-wrap main-table">	
+	        </table>
+	    </div>
+        <!-- 添加权限 start -->
+			<div class="modal fade authorityModal" id="authorityModal" tabindex="-1" role="dialog" aria-labelledby="authorityModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="authorityModaltitle">
+								添加权限
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form">
+                                <form class="form-horizontal" role="form">
+		                            <div class="form-group">
+		                                <label for="chinesename" class="col-lg-4 col-sm-4 col-xs-5 control-label">中文名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="chinesename" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="englishname" class="col-lg-4 col-sm-4 col-xs-5 control-label">英文名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="englishname" >
+		                                </div>
+		                            </div>
+									<div class="form-group">
+										<label for="superior" class="col-lg-4 col-sm-4 col-xs-5 control-label">上级权限</label>
+										<div class="col-lg-8 col-sm-8 col-xs-7">
+										    <select class="form-control select2" id="superior">
+										    	<optgroup label="系统设置">
+										          <option value="1">用户管理用户管理</option>
+										          <option value="2">角色管理</option>
+										          <option value="3">部门管理</option>
+										          <option value="4">菜单管理</option>
+										     </optgroup>
+										     <optgroup label="订单管理">
+										          <option value="5">订单查询</option>
+										          <option value="6">订单导入</option>
+										          <option value="7">订单删除</option>
+										          <option value="8">订单撤销</option>
+										     </optgroup>
+										     <optgroup label="基础数据">
+										          <option value="9">基础数据维护</option>
+										      </optgroup>
+										    </select>
+										</div>
+									</div>
+		                            
+		                            <div class="form-group" style="height:33px;">
+		                            	<label for="superior" class="col-lg-4 col-sm-4 col-xs-5 control-label">公共权限</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <div class="checkbox">
+		                                        <label style="vertical-align:middle;">
+		                                            <input type="checkbox"> 是否是公共权限
+		                                        </label>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="enable" class="col-lg-4 col-sm-4 col-xs-5 control-label">是否启用</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <label class="enable-wrap">
+			                                    <input type="radio" name="enable" id="optionsRadios" value="option1" >
+			                                    是
+			                                    
+			                                </label>
+			                                <label class="enable-wrap">
+			                                    
+			                                    <input type="radio" name="enable" id="optionsRadios1" value="option1" checked>
+			                                    否
+			                                </label>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="operation" class="col-lg-4 col-sm-4 col-xs-5 control-label">操作类型</label>
+		                            	<div class="col-lg-8 col-sm-8 col-xs-7">
+				                            <select class="form-control m-bot15" id="operation">
+				                            	<option value="1">导航</option>
+									            <option value="2">查询</option>
+									            <option value="3">添加</option>
+									            <option value="4">修改</option>
+									            <option value="5">删除</option>
+									            <option value="6">详细</option>
+									            <option value="7">导出</option>
+									            <option value="8">其他</option>   
+									            <option value="">无</option>   
+				                            </select>
+			                            </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="menu" class="col-lg-4 col-sm-4 col-xs-5 control-label">菜单路径</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="menu" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="nav" class="col-lg-4 col-sm-4 col-xs-5 control-label">导航显示</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <label class="enable-wrap">
+			                                    <input type="radio" name="nav" id="nav" value="option1" >
+			                                    是
+			                                    
+			                                </label>
+			                                <label class="enable-wrap">
+			                                    
+			                                    <input type="radio" name="nav" id="nav1" value="option1" checked>
+			                                    否
+			                                </label>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="aim" class="col-lg-4 col-sm-4 col-xs-5 control-label">目标区域</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="aim" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="folder" class="col-lg-4 col-sm-4 col-xs-5 control-label">是否展开</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <label class="enable-wrap">
+			                                    <input type="radio" name="folder" id="folder" value="option1" >
+			                                    是
+			                                    
+			                                </label>
+			                                <label class="enable-wrap">
+			                                    
+			                                    <input type="radio" name="folder" id="folder1" value="option1" checked>
+			                                    否
+			                                </label>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="path" class="col-lg-4 col-sm-4 col-xs-5 control-label">权限路径</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="path" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="object" class="col-lg-4 col-sm-4 col-xs-5 control-label">操作对象</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="object" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="button" class="col-lg-4 col-sm-4 col-xs-5 control-label">按钮名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="button" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="means" class="col-lg-4 col-sm-4 col-xs-5 control-label">前端方法</label>
+		                            	<div class="col-lg-8 col-sm-8 col-xs-7">
+				                            <select class="form-control m-bot15" id="means">
+				                            	<option value="1">查询</option>
+									            <option value="2">添加</option>
+									            <option value="3">修改</option>
+									            <option value="4">删除</option>
+									            <option value="5">详细</option>
+									            <option value="6">导出</option>
+									            <option value="7">其他</option>
+									            <option value="8">默认</option>   
+									            <option value="">禁用</option>   
+				                            </select>
+			                            </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="search">查询语句</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="search"></textarea>
+		                                </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="conditon">条件语句</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="condition"></textarea>
+		                                </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="control">权限控制</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="control"></textarea>
+		                                </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="remark">备注</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="remark"></textarea>
+		                                </div>
+		                            </div>
+		                        </form>
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+							<button type="button" class="btn btn-primary addrow" data-dismiss="modal">
+								保存
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- 添加权限 end -->
+		<!-- 清空缓存 start -->
+			<div class="modal fade" id="clearcacheModal" tabindex="-1" role="dialog" aria-labelledby="clearcacheModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="clearcacheModaltitle">
+									操作提示
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="clearcachep">
+								<i class="iconfont icon-que question"></i>
+								你确定要重新初始化系统缓存吗？</div>	
+							</div>
+							<div class="modal-footer" style="margin-top:0;">
+								<button type="button" class="btn btn-primary">确定
+								</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" >
+									取消
+								</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		<!-- 清空缓存 end -->
+		<!-- 修改 start -->
+			<div class="modal fade authorityModal" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								修改权限
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form">
+                                <form class="form-horizontal" role="form">
+		                            <div class="form-group">
+		                                <label for="chinesename" class="col-lg-4 col-sm-4 col-xs-5 control-label">中文名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="chinesename" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="englishname" class="col-lg-4 col-sm-4 col-xs-5 control-label">英文名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="englishname" >
+		                                </div>
+		                            </div>
+									<div class="form-group">
+										<label for="superior" class="col-lg-4 col-sm-4 col-xs-5 control-label">上级权限</label>
+										<div class="col-lg-8 col-sm-8 col-xs-7">
+										    <select class="form-control select2" id="superior">
+										    	<optgroup label="系统设置">
+										          <option value="1">用户管理用户管理</option>
+										          <option value="2">角色管理</option>
+										          <option value="3">部门管理</option>
+										          <option value="4">菜单管理</option>
+										     </optgroup>
+										     <optgroup label="订单管理">
+										          <option value="5">订单查询</option>
+										          <option value="6">订单导入</option>
+										          <option value="7">订单删除</option>
+										          <option value="8">订单撤销</option>
+										     </optgroup>
+										     <optgroup label="基础数据">
+										          <option value="9">基础数据维护</option>
+										      </optgroup>
+										    </select>
+										</div>
+									</div>
+		                            
+		                            <div class="form-group" style="height:33px;">
+		                            	<label for="superior" class="col-lg-4 col-sm-4 col-xs-5 control-label">公共权限</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <div class="checkbox">
+		                                        <label style="vertical-align:middle;">
+		                                            <input type="checkbox"> 是否是公共权限
+		                                        </label>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="enable" class="col-lg-4 col-sm-4 col-xs-5 control-label">是否启用</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <label class="enable-wrap">
+			                                    <input type="radio" name="enable" id="optionsRadios" value="option1" >
+			                                    是
+			                                    
+			                                </label>
+			                                <label class="enable-wrap">
+			                                    
+			                                    <input type="radio" name="enable" id="optionsRadios1" value="option1" checked>
+			                                    否
+			                                </label>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="operation" class="col-lg-4 col-sm-4 col-xs-5 control-label">操作类型</label>
+		                            	<div class="col-lg-8 col-sm-8 col-xs-7">
+				                            <select class="form-control m-bot15" id="operation">
+				                            	<option value="1">导航</option>
+									            <option value="2">查询</option>
+									            <option value="3">添加</option>
+									            <option value="4">修改</option>
+									            <option value="5">删除</option>
+									            <option value="6">详细</option>
+									            <option value="7">导出</option>
+									            <option value="8">其他</option>   
+									            <option value="">无</option>   
+				                            </select>
+			                            </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="menu" class="col-lg-4 col-sm-4 col-xs-5 control-label">菜单路径</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="menu" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="nav" class="col-lg-4 col-sm-4 col-xs-5 control-label">导航显示</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <label class="enable-wrap">
+			                                    <input type="radio" name="nav" id="nav" value="option1" >
+			                                    是
+			                                    
+			                                </label>
+			                                <label class="enable-wrap">
+			                                    
+			                                    <input type="radio" name="nav" id="nav1" value="option1" checked>
+			                                    否
+			                                </label>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="aim" class="col-lg-4 col-sm-4 col-xs-5 control-label">目标区域</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="aim" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="folder" class="col-lg-4 col-sm-4 col-xs-5 control-label">是否展开</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <label class="enable-wrap">
+			                                    <input type="radio" name="folder" id="folder" value="option1" >
+			                                    是
+			                                    
+			                                </label>
+			                                <label class="enable-wrap">
+			                                    
+			                                    <input type="radio" name="folder" id="folder1" value="option1" checked>
+			                                    否
+			                                </label>
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="path" class="col-lg-4 col-sm-4 col-xs-5 control-label">权限路径</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="path" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="object" class="col-lg-4 col-sm-4 col-xs-5 control-label">操作对象</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="object" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                                <label for="button" class="col-lg-4 col-sm-4 col-xs-5 control-label">按钮名称</label>
+		                                <div class="col-lg-8 col-sm-8 col-xs-7">
+		                                    <input type="text" class="form-control " id="button" >
+		                                </div>
+		                            </div>
+		                            <div class="form-group">
+		                            	<label for="means" class="col-lg-4 col-sm-4 col-xs-5 control-label">前端方法</label>
+		                            	<div class="col-lg-8 col-sm-8 col-xs-7">
+				                            <select class="form-control m-bot15" id="means">
+				                            	<option value="1">查询</option>
+									            <option value="2">添加</option>
+									            <option value="3">修改</option>
+									            <option value="4">删除</option>
+									            <option value="5">详细</option>
+									            <option value="6">导出</option>
+									            <option value="7">其他</option>
+									            <option value="8">默认</option>   
+									            <option value="">禁用</option>   
+				                            </select>
+			                            </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="search">查询语句</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="search"></textarea>
+		                                </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="conditon">条件语句</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="condition"></textarea>
+		                                </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="control">权限控制</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="control"></textarea>
+		                                </div>
+		                            </div>
+		                            <div class="form-group" style="width:100%;">
+		                                <label class="col-lg-2 col-sm-2 col-xs-3 control-label textarea-label" for="remark">备注</label>
+		                                <div class="col-lg-10 col-sm-10 col-xs-9">
+		                                    <textarea class="form-control" rows="3" id="remark"></textarea>
+		                                </div>
+		                            </div>
+		                        </form>
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+							<button type="button" class="btn btn-primary">
+								保存
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- 修改 end -->
+		<!-- 删除 start -->
+			<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								操作提示
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="clearcachep">
+								<i class="iconfont icon-que question"></i>
+								该操作有可能会将基于它的数据也删除，你确定要删除这<span class="deletenum"></span>条数据吗？
+							</div>		
+							</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary delrow" data-dismiss="modal">确定
+							</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" >
+								取消
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- 删除 end -->
+		<!-- oneData  start -->
+			<div class="modal fade" id="oneDataModal" tabindex="-1" role="dialog" aria-labelledby="oneDataModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									操作提示
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="clearcachep">
+								<i class="iconfont icon-jinggao-copy question"></i>
+								请选择一行数据再进行操作</div>	
+							</div>
+							<div class="modal-footer" style="margin-top:0;">
+								<button type="button" class="btn btn-primary"  data-dismiss="modal" >确定
+								</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		<!-- oneData end -->
+	</section>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/bootstrap-table.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/bootstrap-table-zh-CN.js"></script>
+<script src="js/bootstrap-table-export.js"></script>
+<script src="js/tableExport.js"></script>
+<script src="js/select2.js"></script>
+<script src="js/authority.js"></script>
+<script src="js/global.js"></script>
+</html>

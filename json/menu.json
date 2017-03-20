@@ -1,0 +1,47 @@
+[{
+    "array": [
+        {
+            "ename":"authority",
+            "name":"权限管理",
+            "id":2
+        },
+       {
+            "ename":"lagout",
+            "name":"退出单个用户",
+            "id":3
+        },
+        {
+            "ename":"model",
+            "name":"模版设计",
+            "id":4
+        }
+    ],
+    "ename": "basesetup",
+    "name":"基础设置",
+    "id": 1,
+    "open": false
+},
+{
+    "array": [
+        {
+            "ename":"system",
+            "name":"系统维护",
+            "id":6
+        },
+       {
+            "ename":"lagoutbuyer",
+            "name":"购方管理",
+            "id":7
+        },
+        {
+            "ename":"product",
+            "name":"商品管理",
+            "id":8
+        }
+    ],
+    "ename": "code",
+    "name":"编码管理",
+    "id": 5,
+    "open": false
+}
+]
